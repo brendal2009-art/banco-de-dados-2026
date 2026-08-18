@@ -20,11 +20,11 @@ CREATE TABLE `gravacao`(
     FOREIGN KEY (`id_musica`) REFERENCES `musica`(`id`));
 
 CREATE TABLE `compositor`(
-    `cpf` int PRIMARY KEY,
+    `cpf` VARCHAR(14) PRIMARY KEY,
     `nome` varchar(100));
     
 CREATE TABLE `musica_compositor` (
-    `cpf_compositor` int,
+    `cpf_compositor` VARCHAR(14),
     `id_musica` int,
     CONSTRAINT `musica_compositor`PRIMARY KEY (`cpf_compositor`, `id_musica`),
     FOREIGN KEY (`cpf_compositor`) REFERENCES `compositor`(`cpf`),
